@@ -81,4 +81,4 @@ Solving the second part of the problem was quite easy using Java's Fork/Join fra
 
 I particularly enjoyed this coding puzzle, because the given problem can be solved using different interesting approaches and is small enough to do it well in a couple of hours. For reference: It took me 2 hours and 45 minutes to solve the problem with this approach.
 
-I'm interested in hearing about your solutions to this problem as well, so feel free to drop me an E-mail.
+I'm interested in hearing about your solutions to this problem as well, so feel free to drop me an E-mail. 
