@@ -10,7 +10,7 @@ Given a string comprising just of the characters `(`, `)`, `{`, `}`, `[`, `]` de
 * You can only close the last bracket that was opened.
   * Good: `({})`
   * Bad: `({)}`
-* Inside parenthesis `()` only braces `{}` are allowed.
+* Inside parentheses `()` only braces `{}` are allowed.
   * Good: `({})`
   * Bad: `([])` or `(())`
 * Inside braces `{}` only square brackets `[]` are allowed.
