@@ -2,7 +2,7 @@ This repository features a solution to an interesting problem which I came acros
 
 ## Problem description ##
 
-Given a string comprising just of the characters (,),{,},[,] determine if it is well-formed or not by applying the following rules:
+Given a string comprising just of the characters `(`, `)`, `{`, `}`, `[`, `]` determine if it is well-formed or not by applying the following rules:
 
 * Each type of bracket needs to be first opened then closed.
   * Good: `()` or `[]` or `{}`
