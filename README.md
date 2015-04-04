@@ -46,7 +46,7 @@ You can either use C++ or Java for your solution. Depending on the language, the
 * C++ Library: STL and BOOST only
 * Java Compiler: >= Java 7
 
-The original problem description constrained solutions further with regard to lines of code and execution time. However, I do not care for micro-optimizations, so my personal goals in solving this puzzle was with regard to code quality and test coverage.
+The original problem description constrained solutions further with regard to lines of code and execution time. However, I do not care for micro-optimizations, so my personal goals in solving this puzzle was with regard to code quality and test coverage. I used TDD while implementing my solution.
 
 ## Solution ##
 
