@@ -5,25 +5,25 @@ This repository features a solution to an interesting problem which I came acros
 Given a string comprising just of the characters (,),{,},[,] determine if it is well-formed or not by applying the following rules:
 
 * Each type of bracket needs to be first opened then closed.
-  * Good: () or [] or {}
-  * Bad: (() or {}}
+  * Good: `()` or `[]` or `{}`
+  * Bad: `(()` or `{}}`
 * You can only close the last bracket that was opened.
-  * Good: ({})
-  * Bad: ({)}
-* Inside parenthesis () only braces {} are allowed.
-  * Good: ({})
-  * Bad: ([]) or (())
-* Inside braces {} only square brackets [] are allowed.
-  * Good: {[]}
-  * Bad: {()} or {{}}
-*  Any bracket can appear (directly) inside square brackets []
-  * Good: [()] or [{}] or [[]] or [[[]]]
-  * Bad: [([])]
+  * Good: `({})`
+  * Bad: `({)}`
+* Inside parenthesis `()` only braces `{}` are allowed.
+  * Good: `({})`
+  * Bad: `([])` or `(())`
+* Inside braces `{}` only square brackets `[]` are allowed.
+  * Good: `{[]}`
+  * Bad: `{()}` or `{{}}`
+*  Any bracket can appear (directly) inside square brackets `[]`
+  * Good: `[()]` or `[{}]` or `[[]]` or `[[[]]]`
+  * Bad: `[([])]`
 * You can use a list of braces where a single one is allowed of that type
-  * Good: [()()] or {[][()()]} or ()()
+  * Good: `[()()]` or `{[][()()]}` or `()()`
 * An empty string is not a valid expression
 
-For a given string print out True if the string is well-formed or False if otherwise.
+For a given string print out `True` if the string is well-formed or `False` if otherwise.
 
 ### Part I ###
 
@@ -33,8 +33,10 @@ Write a program that can read from stdin. Process all lines and print out the re
 
 Enhance the program from the previous part so that it uses a multi-threaded approach. Dispatch the actual strings to test to as many threads as the machine has cores. Because the order is not necessarily the same as the input provide the output with the referring index of the n-th input like this (no spaces):
 
+```
 1:True
 2:False
+```
 
 ### Limitations ###
 
@@ -54,20 +56,22 @@ I've also seen a nice C++-based solution that uses a state machine and implement
 
 I went for a different approach and implemented my solution using Java. For the first part of the problem, I transformed the given set of rules into the following EBNF, which formally describes what "well-formed" means in the context of the given problem:
 
- * INPUT       := PARENTHESES
-                | BRACES 
-                | BRACKETS
- * PARENTHESES := () 
-                | (BRACES) 
-                | ()PARENTHESES
- * BRACES      := {} 
-                | {BRACKETS} 
-                | {}BRACES
- * BRACKETS    := [] 
-                | [BRACKETS] 
-                | [PARENTHESES] 
-                | [BRACES] 
-                | []BRACKETS
+```
+INPUT       := PARENTHESES
+             | BRACES 
+             | BRACKETS
+PARENTHESES := () 
+             | (BRACES) 
+             | ()PARENTHESES
+BRACES      := {} 
+             | {BRACKETS} 
+             | {}BRACES
+BRACKETS    := [] 
+             | [BRACKETS] 
+             | [PARENTHESES] 
+             | [BRACES] 
+             | []BRACKETS
+```
 
 Using this grammar, I implemented a parser which encodes the various rules. The parser uses a lexer which breaks the input string down into the tokens that comprise the alphabet for this grammar. In my opinion, this approach has the benefit that it clearly separates various abstraction levels:
 * The lexer breaks down the input string into tokens that are of interest for the actual parser. At this stage, we are able to dismiss any characters that are not part of the language we want to parse and fail-fast.
