@@ -1,3 +1,5 @@
+# Coding Puzzle: Well-formed Brackets
+
 [![Build Status](https://travis-ci.org/mguenther/coding-puzzle-brackets.svg?branch=master)](https://travis-ci.org/mguenther/coding-puzzle-brackets.svg)
 
 This repository features a solution to an interesting problem which I came across recently on Github (cf. Github users bkircher and emaskovsky) and which - as it seems - is also a recurring puzzle that is used during interview processes at various companies. Let me introduce the problem first, and then we'll talk about possible solutions and my personal take on this.
